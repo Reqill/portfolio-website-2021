@@ -4,8 +4,9 @@ import '../styles/style.css'
 import Image from "../media/home.svg"
 import { ArrowRight } from 'react-feather';
 
-const WorkBtn = ({ colorScheme, colorTheme, language }) => {
+const WorkBtn = ({ colorScheme, colorTheme, language, setScreen }) => {
     const [hover, setHover] = useState(false)
+
     return (
         <div
             className="seemywork-btn"
@@ -75,7 +76,7 @@ const ContactBtn = ({ colorScheme, language }) => {
 
 function Home({ colorScheme, colorTheme, language }) {
     return (
-        <div className="page">
+        <div className="page-home">
             <div className="page-container">
                 <div className="home-left">
                     <div className="home-content">
