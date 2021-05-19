@@ -1,0 +1,454 @@
+body, html {
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  max-width: 100vw;
+}
+
+main {
+  width: 100%;
+  overflow-x: hidden;
+  height: 100vh;
+  -webkit-transition: all 400ms ease-in;
+  transition: all 400ms ease-in;
+}
+
+.navBg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin-top: -6px;
+}
+
+.logo-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  padding: 0;
+  margin: 0;
+  margin-top: 5px;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  margin-right: 5px;
+}
+
+.options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 25%;
+  max-width: 130px;
+}
+
+.lang-pick {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 12px;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+  text-align: center;
+}
+
+.lang-pick .lang-btn {
+  padding: 4px 8px;
+  border-radius: 5px;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+}
+
+.lang-pick h5 {
+  margin: 0;
+  padding: 0;
+  font-size: .775em;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+}
+
+.theme-switch {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  position: relative;
+  padding-bottom: 14px;
+}
+
+.theme-switch .toggle-btn {
+  height: 18px;
+  width: 35px;
+  border: solid 2px;
+  border-radius: 12px;
+  margin-top: 6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+.theme-switch .toggle-btn .ball {
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+.theme-switch h6 {
+  white-space: nowrap;
+  position: absolute;
+  font-weight: 300;
+  padding: 0;
+  bottom: 14px;
+  margin: 0;
+  margin-top: 2px;
+  font-size: .6em;
+}
+
+.right-navbar {
+  width: 50%;
+  max-width: 675px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.nav-button {
+  position: relative;
+  padding: 9px 18px;
+  white-space: nowrap;
+  border-radius: 7px;
+  -webkit-transition: all 250ms ease-in;
+  transition: all 250ms ease-in;
+}
+
+.nav-button h4 {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  margin-top: 2;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: .95em;
+  -webkit-transition: all 250ms ease-in;
+  transition: all 250ms ease-in;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 95%;
+  max-width: 1080px;
+  margin: auto;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 60%;
+  max-width: 350px;
+  min-width: 250px;
+  white-space: nowrap;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 1.5em;
+  text-decoration: none;
+  -webkit-text-emphasis: none;
+          text-emphasis: none;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+  -webkit-transform: translateY(16px);
+          transform: translateY(16px);
+  letter-spacing: .02em;
+}
+
+.page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 90%;
+}
+
+.page-container {
+  width: 100%;
+  max-width: 1080px;
+  margin: auto;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.home-left {
+  width: 42%;
+  white-space: nowrap;
+  letter-spacing: .02em;
+  padding-left: 20px;
+}
+
+.home-left .home-content {
+  -webkit-transform: translateY(17.5vh);
+          transform: translateY(17.5vh);
+}
+
+.home-left .home-content h1 {
+  font-weight: 500;
+  font-size: 72px;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.home-left .home-content h4 {
+  font-weight: 500;
+  font-style: italic;
+  font-size: 34px;
+  padding: 0;
+  margin: 3px;
+}
+
+.home-left .home-content .jobs {
+  margin-top: 15px;
+}
+
+.home-left .home-content .jobs h3 {
+  font-weight: 400;
+  font-size: 44px;
+  padding: 0;
+  margin: 0;
+  padding-left: 2px;
+}
+
+.home-left .home-content .CTA-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  white-space: nowrap;
+  margin-top: 20px;
+}
+
+.seemywork-btn {
+  letter-spacing: .02em;
+  padding: 12px 33px;
+  border-radius: 90px;
+  white-space: nowrap;
+  border: 3px solid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding-right: 27px;
+  margin-right: 20px;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  position: relative;
+}
+
+.seemywork-btn p {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 20px;
+  padding-right: 5px;
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+}
+
+.seemywork-btn:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+.contactme-btn {
+  letter-spacing: .02em;
+  padding: 12.5px 33px;
+  border-radius: 90px;
+  border: 3px solid;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  position: relative;
+}
+
+.contactme-btn p {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 20px;
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+}
+
+.slider-inset {
+  top: -2px;
+  left: -2px;
+  bottom: -2px;
+  right: -2px;
+  z-index: -9;
+  position: absolute;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  -webkit-clip-path: url(#clipPathSvg);
+          clip-path: url(#clipPathSvg);
+}
+
+.slider-inset-2 {
+  top: -2px;
+  left: 0;
+  bottom: -2px;
+  z-index: -9;
+  position: absolute;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  -webkit-clip-path: url(#clipPathSvg2);
+          clip-path: url(#clipPathSvg2);
+}
+
+#st {
+  padding-left: 4.5em;
+}
+
+#nd {
+  padding-left: 2em;
+}
+
+#rd {
+  padding-left: 3em;
+}
+
+.home-right {
+  width: 50%;
+  margin-right: -5%;
+}
+
+.svg-home-container {
+  width: 100%;
+  -webkit-transform: translateY(15vh);
+          transform: translateY(15vh);
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+a, a:hover, a:active {
+  text-decoration: none;
+}
+/*# sourceMappingURL=style.css.map */
