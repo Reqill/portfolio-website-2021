@@ -23,9 +23,9 @@ import LogoColor from './media/logoMM-color@SVG.svg'
 function App() {
   const [colorTheme, setColorTheme] = useState('light')
   const [language, setLanguage] = useState('EN')
-  const [screen, setScreen] = useState(1)
+  const [screen, setScreen] = useState(null)
   const [colorScheme, setColorScheme] = useState(null)
-
+  //TODO: integrate cookies
   const colorSchemeData = {
     light: {
       primary: "#3F37C9",
@@ -33,6 +33,7 @@ function App() {
       backgroundPage: "#F5F5F5",
       backgroundCard: "#FEFEFE",
       hover: "#FCFCFC",
+      gradient: `linear-gradient(#F5F5F5 10%, transparent)`
     },
     dark: {
       primary: "#F4F4F4",
@@ -40,6 +41,7 @@ function App() {
       backgroundPage: "#1B1B1B",
       backgroundCard: "#242424",
       hover: "#333333",
+      gradient: `linear-gradient(#1B1B1B 10%, transparent)`
     }
   }
 
@@ -64,7 +66,8 @@ function App() {
     return (
       <Router>
         <main style={{ backgroundColor: colorScheme.backgroundPage }}>
-          <div className="navBg" >
+          <div style={{ height: "60px" }} />
+          <div className="navBg" style={{ backgroundColor: colorScheme.backgroundPage }}>
             <nav>
               <Link to="/">
                 <div className="logo-container" onClick={() => setScreen(0)}>
@@ -104,19 +107,19 @@ function App() {
 
           <Switch>
             <Route path="/portfolio">
-              <Work />
+              <Work colorScheme={colorScheme} colorTheme={colorTheme} language={language} setScreen={setScreen} />
             </Route>
             <Route path="/about">
-              <About />
+              <About colorScheme={colorScheme} colorTheme={colorTheme} language={language} setScreen={setScreen} />
             </Route>
             <Route path="/contact">
-              <Contact />
+              <Contact colorScheme={colorScheme} colorTheme={colorTheme} language={language} setScreen={setScreen} />
             </Route>
             <Route path="/">
               <Home colorScheme={colorScheme} colorTheme={colorTheme} language={language} />
             </Route>
             <Route path="*">
-              <NotFound />
+              <NotFound colorScheme={colorScheme} colorTheme={colorTheme} language={language} setScreen={setScreen} />
             </Route>
           </Switch>
         </main>
