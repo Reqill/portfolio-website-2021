@@ -33,15 +33,17 @@ function App() {
       backgroundPage: "#F5F5F5",
       backgroundCard: "#FEFEFE",
       hover: "#FCFCFC",
-      gradient: `linear-gradient(#F5F5F5 10%, transparent)`
+      gradient: `linear-gradient(#F5F5F5 10%, transparent)`,
+      hover2: "#ECECEC",
     },
     dark: {
       primary: "#F4F4F4",
       secondary: "#F4F4F4",
       backgroundPage: "#1B1B1B",
-      backgroundCard: "#242424",
+      backgroundCard: "#232323",
       hover: "#333333",
-      gradient: `linear-gradient(#1B1B1B 10%, transparent)`
+      gradient: `linear-gradient(#1B1B1B 10%, transparent)`,
+      hover2: "#1E1E1E",
     }
   }
 
