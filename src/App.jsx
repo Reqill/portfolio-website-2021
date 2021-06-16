@@ -32,6 +32,8 @@ function App() {
       secondary: "#4895EF",
       backgroundPage: "#F5F5F5",
       backgroundCard: "#FEFEFE",
+      backgroundForm: "#FFFFFF",
+      formText: "#232323",
       hover: "#FCFCFC",
       gradient: `linear-gradient(#F5F5F5 10%, transparent)`,
       hover2: "#ECECEC",
@@ -41,6 +43,8 @@ function App() {
       secondary: "#F4F4F4",
       backgroundPage: "#1B1B1B",
       backgroundCard: "#232323",
+      backgroundForm: "#232323",
+      formText: "#F4F4F4",
       hover: "#333333",
       gradient: `linear-gradient(#1B1B1B 10%, transparent)`,
       hover2: "#1E1E1E",
@@ -67,46 +71,47 @@ function App() {
   } else {
     return (
       <Router>
-        <main style={{ backgroundColor: colorScheme.backgroundPage }}>
+        <main style={{ backgroundColor: colorScheme.backgroundPage, zIndex: -1 }}>
           <div style={{ height: "60px" }} />
-          <div className="navBg" style={{ backgroundColor: colorScheme.backgroundPage }}>
-            <nav>
-              <Link to="/">
-                <div className="logo-container" onClick={() => setScreen(0)}>
-                  <div className="logo">
-                    <img src={(colorTheme === "light") ? LogoColor : LogoWhite} style={{ marginTop: (colorTheme === "light") ? null : "12px" }} />
+          <div style={{ display: "flex", flexDirection: "row", flexWrap: "nopwrap", justifyContent: "space-between", width: "100%" }}>
+            <div className="navBg" style={{ backgroundColor: colorScheme.backgroundPage }}>
+              <nav>
+                <Link to="/">
+                  <div className="logo-container" onClick={() => setScreen(0)}>
+                    <div className="logo">
+                      <img src={LogoColor} style={{ opacity: colorTheme === "light" ? 1 : 0 }} />
+                      <img src={LogoWhite} style={{ marginTop: "12px", position: "absolute", opacity: colorTheme === "light" ? 1 : 0, left: 0, opacity: colorTheme === "light" ? 0 : 1 }} />
+                    </div>
+                    <h2><span style={{ color: colorScheme.primary, paddingRight: "1px" }}>MIKOŁAJ</span> <span style={{ color: colorScheme.secondary }}>MRÓZEK</span></h2>
                   </div>
-                  <h2><span style={{ color: colorScheme.primary, paddingRight: "1px" }}>MIKOŁAJ</span> <span style={{ color: colorScheme.secondary }}>MRÓZEK</span></h2>
+                </Link>
+                <div className="right-navbar">
+                  <ul>
+                    <li>
+                      <Link to="/portfolio">
+                        <LinkAnchor setScreen={setScreen} activeIdx={screen} idx={1} colorScheme={colorScheme} text="portfolio" />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/about">
+                        <LinkAnchor setScreen={setScreen} activeIdx={screen} idx={2} colorScheme={colorScheme} text={language === "EN" ? "about" : "o mnie"} />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/contact">
+                        <LinkAnchor setScreen={setScreen} activeIdx={screen} idx={3} colorScheme={colorScheme} text={language === "EN" ? "contact" : "kontakt"} />
+                      </Link>
+                    </li>
+                  </ul>
+                  <div className='options'>
+                    <LangSwitch currentLanguage={language} switchLanguage={setLanguage} colorScheme={colorScheme} />
+                    <DarkSwitch currentTheme={colorTheme} switchTheme={setColorTheme} colorScheme={colorScheme} language={language} />
+                  </div>
                 </div>
-              </Link>
-              <div className="right-navbar">
-                <ul>
-                  <li>
-                    <Link to="/portfolio">
-                      <LinkAnchor setScreen={setScreen} activeIdx={screen} idx={1} colorScheme={colorScheme} text="portfolio" />
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/about">
-                      <LinkAnchor setScreen={setScreen} activeIdx={screen} idx={2} colorScheme={colorScheme} text={language === "EN" ? "about" : "o mnie"} />
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/contact">
-                      <LinkAnchor setScreen={setScreen} activeIdx={screen} idx={3} colorScheme={colorScheme} text={language === "EN" ? "contact" : "kontakt"} />
-                    </Link>
-                  </li>
-                </ul>
-                <div className='options'>
-                  <LangSwitch currentLanguage={language} switchLanguage={setLanguage} colorScheme={colorScheme} />
-                  <DarkSwitch currentTheme={colorTheme} switchTheme={setColorTheme} colorScheme={colorScheme} language={language} />
-                </div>
-              </div>
-            </nav>
+              </nav>
+            </div>
+            <div style={{ width: "8px" }} />
           </div>
-
-
-
           <Switch>
             <Route path="/portfolio">
               <Work colorScheme={colorScheme} colorTheme={colorTheme} language={language} setScreen={setScreen} />

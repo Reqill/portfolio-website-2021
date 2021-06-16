@@ -10,7 +10,6 @@ function LinkAnchor({ activeIdx, idx, colorScheme, text, setScreen }) {
                 onClick={() => setScreen(idx)} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
                 <h4 style={{ color: (activeIdx === idx) ? colorScheme.primary : colorScheme.secondary }}>{text}</h4>
             </div>
-
         </div>
     );
 }

@@ -3,12 +3,22 @@ import '../styles/style.css'
 import { GitHub } from 'react-feather';
 import { Link } from 'react-feather';
 import { Download } from 'react-feather';
+import PortfolioOneImage from '../media/portfolio1mock.png'
+import PortfolioTwoImage from '../media/portfolio2mock.png'
+import SuiloOneImage from '../media/suilo1mock.png'
+import SuiloTwoImage from '../media/suilo2mock.png'
+import TchnienieOneImage from '../media/tchnienie1mock.png'
+import TchnienieTwoImage from '../media/tchnienie2mock.png'
+import TchnienieThreeImage from '../media/tchnienie3mock.png'
+
 
 const showcaseList = [
     {
         header: "Portfolio wesite",
+        headerPol: "Strona z portfolio",
         description: "design and execution",
-        githubURL: "none",
+        descriptionPol: "projekt i realizacja",
+        githubURL: "#",
         normalURL: "#",
         downloadURL: "none",
         type: "desktop",
@@ -23,12 +33,15 @@ const showcaseList = [
             "AdobeXD",
         ],
         photos: [
-
+            [PortfolioOneImage, "desktop with website mockup 1.1"],
+            [PortfolioTwoImage, "desktop with website mockup 1.2"]
         ],
     },
     {
         header: "Tchnienie app",
+        headerPol: "Aplikacja tchnienie",
         description: "design and execution",
+        descriptionPol: "projekt i realizacja",
         githubURL: "#",
         normalURL: "#",
         downloadURL: "#",
@@ -43,12 +56,16 @@ const showcaseList = [
             "Illustrator"
         ],
         photos: [
-
+            [TchnienieOneImage, "phone with app mockup 1.1"],
+            [TchnienieTwoImage, "phone with app mockup 1.2"],
+            [TchnienieThreeImage, "phone with app mockup 1.3"]
         ],
     },
     {
         header: "SUILO website",
+        headerPol: "Strona SUILO",
         description: "design and execution",
+        descriptionPol: "projekt i realizacja",
         githubURL: "none",
         normalURL: "#",
         downloadURL: "none",
@@ -63,12 +80,15 @@ const showcaseList = [
             "AdobeXD",
         ],
         photos: [
-
+            [SuiloOneImage, "desktop with website mockup 2.1"],
+            [SuiloTwoImage, "desktop with website mockup 2.2"]
         ],
     },
     {
         header: "PlanIO app",
+        headerPol: "Aplikacja planIO",
         description: "design and execution",
+        descriptionPol: "projekt i realizacja",
         githubURL: "none",
         normalURL: "#",
         downloadURL: "#",
@@ -80,7 +100,9 @@ const showcaseList = [
             "AdobeXD",
         ],
         photos: [
-
+            [TchnienieOneImage, "Phone with app mockup 2.1"],
+            [TchnienieTwoImage, "Phone with app mockup 2.2"],
+            [TchnienieThreeImage, "Phone with app mockup 2.3"]
         ],
     }
 ]
@@ -92,12 +114,14 @@ const ShowcaseCard = ({ colorTheme, language, colorScheme, info, active }) => {
 
     const {
         header,
+        headerPol,
         description,
+        descriptionPol,
         githubURL,
         normalURL,
         downloadURL,
         technologies,
-        // photos,
+        photos,
         type,
     } = info;
 
@@ -115,6 +139,35 @@ const ShowcaseCard = ({ colorTheme, language, colorScheme, info, active }) => {
             }} key={`${i}${el}`}>{el}</p></div>)
     }
 
+    const generateImg = () => {
+        if (type === "mobile") {
+            return (
+                <div className="imgs-phone" style={{ opacity: (colorScheme === "dark") ? 0.85 : 1 }}>
+                    <div className="phone-img">
+                        <img src={photos[0][0]} alt={photos[0][1]} />
+                    </div>
+                    <div className="phone-img">
+                        <img src={photos[1][0]} alt={photos[1][1]} />
+                    </div>
+                    <div className="phone-img">
+                        <img src={photos[2][0]} alt={photos[2][1]} />
+                    </div>
+                </div>
+            );
+        } else if (type === "desktop") {
+            return (
+                <div className="imgs-desktop" style={{ opacity: (colorScheme === "dark") ? 0.85 : 1 }}>
+                    <div className="desktop-front">
+                        <img src={photos[0][0]} alt={photos[0][1]} />
+                    </div>
+                    <div className="desktop-behind">
+                        <img src={photos[1][0]} alt={photos[1][1]} />
+                    </div>
+                </div>
+            );
+        }
+    }
+
     return (
         <div className="showcase" style={{ backgroundColor: hover ? colorScheme.hover2 : colorScheme.backgroundCard }}
             onMouseEnter={() => setHover(true)}
@@ -125,12 +178,12 @@ const ShowcaseCard = ({ colorTheme, language, colorScheme, info, active }) => {
                     <p className="header"
                         style={{ color: active ? colorScheme.primary : colorScheme.secondary }}
                     >
-                        {header}
+                        {language === "EN" ? header : headerPol}
                     </p>
                     <p className="descritpion"
                         style={{ color: active ? colorScheme.primary : colorScheme.secondary }}
                     >
-                        {description}
+                        {language === "EN" ? description : descriptionPol}
                     </p>
                 </div>
                 <div className="button-row">
@@ -168,6 +221,7 @@ const ShowcaseCard = ({ colorTheme, language, colorScheme, info, active }) => {
                 <div className="tech-container" style={{ opacity: hover ? 1 : 0 }}>
                     {generateTech()}
                 </div>
+                {generateImg()}
             </div >
 
         </div >
