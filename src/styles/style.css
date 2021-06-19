@@ -247,7 +247,26 @@ main {
   }
 }
 
-.nav-button {
+.nav-sheet {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 7px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: all 250ms ease-in;
+  transition: all 250ms ease-in;
+}
+
+.nav-sheet .nav-button {
   position: relative;
   padding: 9px 18px;
   white-space: nowrap;
@@ -257,16 +276,15 @@ main {
 }
 
 @media (max-width: 1000px) {
-  .nav-button {
+  .nav-sheet .nav-button {
     padding: 8px 17px;
   }
 }
 
-.nav-button h4 {
+.nav-sheet .nav-button h4 {
   position: relative;
   padding: 0;
-  margin: 0;
-  margin-top: 2;
+  margin: 2px 0 0 0;
   font-weight: 500;
   text-decoration: none;
   font-size: .95em;
@@ -275,7 +293,7 @@ main {
 }
 
 @media (max-width: 1000px) {
-  .nav-button h4 {
+  .nav-sheet .nav-button h4 {
     font-size: .9em;
   }
 }
@@ -295,6 +313,7 @@ nav {
   max-width: 1080px;
   margin: auto;
   padding: 0;
+  max-height: 70px;
 }
 
 img {
@@ -319,6 +338,11 @@ ul {
   max-width: 350px;
   min-width: 250px;
   white-space: nowrap;
+  max-height: 70px;
+}
+
+ul li {
+  max-height: 70px;
 }
 
 h2 {
@@ -998,6 +1022,37 @@ h2 {
   margin-top: 3px;
   font-size: .75em;
   letter-spacing: .03em;
+}
+
+.other-on-insta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 35px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+}
+
+.other-on-insta p {
+  padding: 0;
+  margin: 0;
+  padding-left: 50px;
+  color: rgba(136, 136, 136, 0.8);
+  font-weight: 500;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+}
+
+.other-on-insta p a {
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
 }
 
 a, a:hover, a:active, a:link {

@@ -207,31 +207,42 @@ main{
     }
 }
 
-.nav-button{
+.nav-sheet{
     position: relative;
-    padding: 9px 18px;
+    padding: 0;
+    margin: 0;
     white-space: nowrap;
+    align-items: center;
+    justify-content: center;
     border-radius: 7px;
+    display: flex;
     transition: all 250ms ease-in;
-    @include tablet{
-        padding: 8px 17px;
-    }
-
-    h4{
+    .nav-button{
         position: relative;
-        padding: 0;
-        margin: 0;
-        margin-top: 2;
-        font-weight: 500;
-        text-decoration: none;
-        font-size: .95em;
+        padding: 9px 18px;
+        white-space: nowrap;
+        border-radius: 7px;
         transition: all 250ms ease-in;
-
         @include tablet{
-            font-size: .9em;
+            padding: 8px 17px;
+        }
+
+        h4{
+            position: relative;
+            padding: 0;
+            margin: 2px 0 0 0;
+            font-weight: 500;
+            text-decoration: none;
+            font-size: .95em;
+            transition: all 250ms ease-in;
+
+            @include tablet{
+                font-size: .9em;
+            }
         }
     }
 }
+
 
 nav{
     display: flex;
@@ -241,6 +252,7 @@ nav{
     max-width: 1080px;
     margin: auto;
     padding: 0;
+    max-height: 70px;
 }
 
 img {
@@ -257,6 +269,10 @@ ul {
     max-width: 350px;
     min-width: 250px;
     white-space: nowrap;
+    max-height: 70px;
+    li{
+        max-height: 70px;
+    }
 }
 
 h2 {
@@ -772,6 +788,26 @@ h2 {
 
 }
 
+.other-on-insta{
+    display: flex;
+    flex-direction: row;
+    margin-top: 35px;
+    align-items: center;
+    transition: all 250ms ease-in-out;
+
+    p{
+       padding: 0;
+       margin: 0;
+       padding-left: 50px;
+       color: rgba(136, 136, 136, .8);
+       font-weight: 500;
+       transition: all 250ms ease-in-out;
+       a{
+        transition: all 250ms ease-in-out;
+       }
+       
+    }
+}
 
 a, a:hover, a:active, a:link{
     text-decoration: none;
