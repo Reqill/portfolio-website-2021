@@ -22,7 +22,7 @@ import LogoColor from './media/logoMM-color@SVG.svg'
 
 function App() {
   const [colorTheme, setColorTheme] = useState('light')
-  const [language, setLanguage] = useState('EN')
+  const [language, setLanguage] = useState('PL')
   const [screen, setScreen] = useState(null)
   const [colorScheme, setColorScheme] = useState(null)
   //TODO: integrate cookies
