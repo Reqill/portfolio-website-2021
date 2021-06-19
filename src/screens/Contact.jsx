@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import emailjs from 'emailjs-com'
 import '../styles/style.css'
 
 function Contact({ setScreen, language, colorScheme, colorTheme }) {
@@ -10,11 +10,29 @@ function Contact({ setScreen, language, colorScheme, colorTheme }) {
         setScreen(3)
     }, [setScreen])
 
-    console.log(language)
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm('gmail', 'template_odH2IJVs', e.target, 'user_RpcTTj6nRQ0RrobcgPdio')
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+        _resetForm();
+        alert(language === "EN" ? "Thank you for contacting me. I will respond you soon." : "Dziękuję za kontakt. Odpowiem wkrótce.")
+    }
+
+
+    const _resetForm = () => {
+        document.getElementById("contact-form").reset();
+    }
+
 
     return (
         <div className="form-screen">
-            <form>
+            <form id="contact-form" onSubmit={sendEmail}>
                 <div className="space-row">
                     <div className="input-field">
                         <label
@@ -33,7 +51,7 @@ function Contact({ setScreen, language, colorScheme, colorTheme }) {
                             placeholder={focused !== 1 ? (language === "EN" ? "Name" : "Imię") : ""}
                             style={{ backgroundColor: colorScheme.backgroundForm, color: colorScheme.formText }}
                             required
-                            name="name"
+                            name="user_name"
                             onInvalid={(e) => setValidation([0, validation[1], validation[2], validation[3]])}
                         />
                     </div>
@@ -43,7 +61,7 @@ function Contact({ setScreen, language, colorScheme, colorTheme }) {
                         <div className="indicator" style={{ backgroundColor: validation[1] ? (focused === 2 ? colorScheme.primary : colorScheme.secondary) : "red", opacity: colorTheme === "dark" ? focused === 2 ? 1 : .8 : 1 }} />
                         <input
                             onFocus={(e) => setFocused(2)}
-                            name="email"
+                            name="user_email"
                             onBlur={(e) => { setFocused(0); }}
                             placeholder={focused !== 2 ? "Email" : ""}
                             style={{ backgroundColor: colorScheme.backgroundForm, color: colorScheme.formText }}
