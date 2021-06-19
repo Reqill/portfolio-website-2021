@@ -10,6 +10,9 @@ import SuiloTwoImage from '../media/suilo2mock.png'
 import TchnienieOneImage from '../media/tchnienie1mock.png'
 import TchnienieTwoImage from '../media/tchnienie2mock.png'
 import TchnienieThreeImage from '../media/tchnienie3mock.png'
+import PlanIOOneImage from '../media/planio1mockup.png'
+import PlanIOTwoImage from '../media/planio2mockup.png'
+import PlanIOThreeImage from '../media/planio3mockup.png'
 
 
 const showcaseList = [
@@ -18,8 +21,8 @@ const showcaseList = [
         headerPol: "Strona z portfolio",
         description: "design and execution",
         descriptionPol: "projekt i realizacja",
-        githubURL: "#",
-        normalURL: "#",
+        githubURL: "https://github.com/Reqill/portfolio-website-2021",
+        normalURL: "https://mikolajmrozek.com",
         downloadURL: "none",
         type: "desktop",
         technologies: [
@@ -42,7 +45,7 @@ const showcaseList = [
         headerPol: "Aplikacja tchnienie",
         description: "design and execution",
         descriptionPol: "projekt i realizacja",
-        githubURL: "#",
+        githubURL: "https://github.com/Reqill/tchnienie-app",
         normalURL: "#",
         downloadURL: "#",
         type: "mobile",
@@ -66,8 +69,8 @@ const showcaseList = [
         headerPol: "Strona SUILO",
         description: "design and execution",
         descriptionPol: "projekt i realizacja",
-        githubURL: "none",
-        normalURL: "#",
+        githubURL: "https://github.com/Reqill/SUILO-website/",
+        normalURL: "http://suilo.pl/",
         downloadURL: "none",
         type: "desktop",
         technologies: [
@@ -89,7 +92,7 @@ const showcaseList = [
         headerPol: "Aplikacja planIO",
         description: "design and execution",
         descriptionPol: "projekt i realizacja",
-        githubURL: "none",
+        githubURL: "https://github.com/Reqill/PlanIO-app",
         normalURL: "#",
         downloadURL: "#",
         type: "mobile",
@@ -100,9 +103,9 @@ const showcaseList = [
             "AdobeXD",
         ],
         photos: [
-            [TchnienieOneImage, "Phone with app mockup 2.1"],
-            [TchnienieTwoImage, "Phone with app mockup 2.2"],
-            [TchnienieThreeImage, "Phone with app mockup 2.3"]
+            [PlanIOOneImage, "Phone with app mockup 2.1"],
+            [PlanIOTwoImage, "Phone with app mockup 2.2"],
+            [PlanIOThreeImage, "Phone with app mockup 2.3"]
         ],
     }
 ]
@@ -277,7 +280,11 @@ function Work({ setScreen, colorTheme, colorScheme, language }) {
                     </div>
                 </section> */}
                 <div className="dot" style={{ backgroundColor: colorScheme.secondary, marginTop: "35px" }} />
-                <div className="dot" style={{ backgroundColor: colorScheme.secondary, marginTop: "35px" }} />
+                <div className="other-on-insta">
+                    <div className="dot" style={{ backgroundColor: colorScheme.secondary }} />
+                    <p>{language === "EN" ? "You can find my other projects on " : "Inne moje projekty możesz znaleźć na "}
+                        <a href="https://instagram.com/mmrozek.design/" target="_blank" style={{ color: colorScheme.primary }}>{language === "EN" ? "Instagram" : "Instagramie"}</a></p>
+                </div>
                 <div className="dot" style={{ backgroundColor: colorScheme.secondary, marginTop: "35px" }} />
             </div>
 
